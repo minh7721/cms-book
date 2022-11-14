@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Dùng để làm menu cho trang web */
+.menu {
+    background-color: black;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.menu li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.menu li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: rgb(0, 162, 255);
+}
+
+/* search */
+.search {
+    float: right;
+    padding: 5px;
+    border: none;
+    outline: none;
+    width: 200px;
+}
+
+.fa-cart-shopping {
+    float: right;
+    color: white;
+    margin: 0 20px;
+    font-size: 20px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.btnSearch {
+    float: right;
+    padding: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.count {
+    background-color: red;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+/* Login - Register */
+.input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
