@@ -61,12 +61,18 @@
             <div class="row">
               <div class="col">
                 <p>Tieu de</p>
-                <input class="w-100 p-2" type="text" placeholder="Tieu de..." />
+                <input
+                  class="w-100 p-2 tieuDe"
+                  disabled
+                  type="text"
+                  placeholder="Tieu de..."
+                />
               </div>
               <div class="col">
                 <p>Tac gia</p>
                 <input
-                  class="w-100 p-2"
+                  class="w-100 p-2 tacGia"
+                  disabled
                   type="text"
                   required
                   placeholder="Tac gia..."
@@ -78,7 +84,8 @@
               <div class="col">
                 <p>Mo ta sach</p>
                 <textarea
-                  class="w-100 p-2"
+                  class="w-100 p-2 moTaSach"
+                  disabled
                   placeholder="Mo ta..."
                   name=""
                   id=""
@@ -91,12 +98,13 @@
             <div class="row mt-3">
               <div class="col">
                 <p>Ngay phat hanh</p>
-                <input class="w-100 p-2" type="date" />
+                <input class="w-100 p-2 ngayPhatHanh" type="date" disabled />
               </div>
               <div class="col">
                 <p>So trang</p>
                 <input
-                  class="w-100 p-2"
+                  disabled
+                  class="w-100 p-2 soTrang"
                   type="text"
                   name=""
                   id=""
@@ -107,7 +115,13 @@
             <div class="row mt-3">
               <div class="col">
                 <p>The loai</p>
-                <select name="" id="" class="p-2" style="width: 48%">
+                <select
+                  name=""
+                  id=""
+                  class="p-2 theLoai"
+                  style="width: 48%"
+                  disabled
+                >
                   <option value="1">The loai 1</option>
                   <option value="2">The loai 2</option>
                   <option value="3">The loai 3</option>
@@ -117,7 +131,7 @@
           </div>
           <div class="col d-flex justify-content-center mt-3">
             <div class="row">
-              <input type="file" name="" id="imgInp" />
+              <input type="file" name="" id="imgInp" disabled />
               <img id="imgResult" src="#" alt="your image" />
             </div>
           </div>
@@ -128,8 +142,17 @@
     <!-- Footer -->
 
     <div class="container row d-flex justify-content-end mt-5">
-      <button class="btn btn-success" style="width: 100px">Save</button>
+      <button class="btn btn-success btn-edit" style="width: 100px">
+        Edit
+      </button>
     </div>
+
+    <div class="container row d-flex justify-content-end mt-5">
+      <button class="btn btn-success btn-save d-none" style="width: 100px">
+        Save
+      </button>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
@@ -143,13 +166,6 @@
     ></script>
 
     <script>
-      // $(document).ready(function(){
-      //     $('#imgInput').on('change', function(){
-      //         imgInput = $(this).val().replace(/C:\\fakepath\\/i, '');
-
-      //         $('.imgResult').html('<img src="'+ imgInput+'" id="imgResult" alt="" class="img-fluid my-3 w-100 h-auto"/>');
-      //     })
-      // })
       function readURL(input) {
         if (input.files && input.files[0]) {
           var reader = new FileReader();
@@ -164,6 +180,22 @@
 
       $("#imgInp").change(function () {
         readURL(this);
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+          $('.btn-edit').click(function(){
+              $(this).addClass('d-none');
+              $('.btn-save').removeClass('d-none');
+
+              $('.tieuDe').removeAttr('disabled');
+              $('.tacGia').removeAttr('disabled');
+              $('.moTaSach').removeAttr('disabled');
+              $('.ngayPhatHanh').removeAttr('disabled');
+              $('.soTrang').removeAttr('disabled');
+              $('.theLoai').removeAttr('disabled');
+              $('#imgInp').removeAttr('disabled');
+          })
       });
     </script>
   </body>
